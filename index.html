@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado de Diamante - Joyería Carol</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .certificado {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            max-width: 180px;
+        }
+        .datos {
+            font-size: 10px;
+            color: #777;
+        }
+        h1 {
+            font-size: 32px;
+            margin: 20px 0;
+            color: #444;
+            font-weight: bold;
+        }
+        .carrusel {
+            margin: 30px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        .carrusel img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .carrusel img.active {
+            opacity: 1;
+        }
+        .informacion {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            text-align: left;
+        }
+        .columna {
+            width: 45%;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .detalle {
+            margin: 8px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+        }
+        .columna img {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        let currentIndex = 0;
+        function changeImage() {
+            const images = document.querySelectorAll('.carrusel img');
+            images.forEach((img, index) => {
+                img.classList.remove('active');
+                if (index === currentIndex) {
+                    img.classList.add('active');
+                }
+            });
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+        setInterval(changeImage, 3000);
+    </script>
+</head>
+<body>
+    <div class="certificado">
+        <div class="certificado">
+            <div class="header" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <img src="logo.png" alt="Joyería Carol" class="logo">
+                <p class="datos">Joyería Carol | Dirección: Av. Diamante 123, Centro, Ciudad | Tel: (555) 123-4567 | Instagram: @joyeriacarol</p>
+        </div>
+        <h1 style="text-align: center;">Certificado de Autenticidad - Anillo de Diamante</h1>
+        <div class="carrusel">
+            <img src="anillo 1.png" alt="Anillo 1">
+            <img src="anillo 2.png" alt="Anillo 2">
+            <img src="anillo 3.png" alt="Anillo 3">
+        </div>
+        <div class="informacion">
+            <img src="datos.png" alt="Datos del Anillo" style="width: 100%; height: auto; border-radius: 8px; margin-top: 20px;">
+        </div>
+        <div class="footer">
+            <p>Fecha de Emisión: 01 de abril de 2025</p>
+        </div>
+    </div>
+</body>
+</html>
